@@ -39,9 +39,9 @@
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.grpSearch = new System.Windows.Forms.GroupBox();
-            this.lblFind = new System.Windows.Forms.Label();
-            this.txtFind = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
+            this.txtFind = new System.Windows.Forms.TextBox();
+            this.lblFind = new System.Windows.Forms.Label();
             this.btnAddSave = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnTotal = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 34);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -136,6 +136,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(280, 26);
             this.txtAmount.TabIndex = 8;
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAmount_KeyPress);
             // 
             // grpSearch
             // 
@@ -149,22 +150,6 @@
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search";
             // 
-            // lblFind
-            // 
-            this.lblFind.AutoSize = true;
-            this.lblFind.Location = new System.Drawing.Point(25, 47);
-            this.lblFind.Name = "lblFind";
-            this.lblFind.Size = new System.Drawing.Size(109, 20);
-            this.lblFind.TabIndex = 0;
-            this.lblFind.Text = "Find invoice #:";
-            // 
-            // txtFind
-            // 
-            this.txtFind.Location = new System.Drawing.Point(154, 40);
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(262, 26);
-            this.txtFind.TabIndex = 1;
-            // 
             // btnFind
             // 
             this.btnFind.Location = new System.Drawing.Point(154, 87);
@@ -173,6 +158,22 @@
             this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Find Invoice";
             this.btnFind.UseVisualStyleBackColor = true;
+            // 
+            // txtFind
+            // 
+            this.txtFind.Location = new System.Drawing.Point(154, 40);
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(262, 26);
+            this.txtFind.TabIndex = 1;
+            // 
+            // lblFind
+            // 
+            this.lblFind.AutoSize = true;
+            this.lblFind.Location = new System.Drawing.Point(25, 47);
+            this.lblFind.Name = "lblFind";
+            this.lblFind.Size = new System.Drawing.Size(109, 20);
+            this.lblFind.TabIndex = 0;
+            this.lblFind.Text = "Find invoice #:";
             // 
             // btnAddSave
             // 
