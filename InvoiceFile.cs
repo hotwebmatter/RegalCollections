@@ -29,7 +29,7 @@ namespace RegalCollections
             StreamReader infile;
             char delimiter = ',';
             string line;
-            string[] fields = new string[4];
+            string[] fields = new string[4]; // unnecessary assignment of value
             if (File.Exists("invoices.txt"))
             {
                 infile = File.OpenText("invoices.txt");
