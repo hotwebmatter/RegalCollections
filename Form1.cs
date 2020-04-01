@@ -31,6 +31,13 @@ namespace RegalCollections
             }
         }
 
+        private void ReadOnlyInputs(bool bln)
+        {
+            txtCustID.ReadOnly = bln;
+            dtpDate.Enabled = bln;
+            txtAmount.ReadOnly = bln;
+            btnFind.Enabled = bln;
+        }
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close(); // TODO: Prompt user to confirm exit
