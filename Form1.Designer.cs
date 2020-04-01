@@ -94,6 +94,7 @@
             this.cboInvoice.Name = "cboInvoice";
             this.cboInvoice.Size = new System.Drawing.Size(280, 28);
             this.cboInvoice.TabIndex = 2;
+            this.cboInvoice.SelectedIndexChanged += new System.EventHandler(this.CboInvoice_SelectedIndexChanged);
             // 
             // lblCustID
             // 

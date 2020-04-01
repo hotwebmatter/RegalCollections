@@ -51,6 +51,22 @@ namespace RegalCollections
             this.Close(); // TODO: Prompt user to confirm exit
         }
 
+        private void CboInvoice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Invoice anInvoice;
+            anInvoice = anInvoiceCollection.FindInvoice(int.Parse(cboInvoice.Text));
+            if (anInvoice == null)
+            {
+                MessageBox.Show("Not found", "Error");
+            }
+            else
+            {
+                txtCustID.Text = anInvoice.custID.ToString();
+                dtpDate.Value = anInvoice.date;
+                txtAmount.Text = anInvoice.salesAmount.ToString("c");
+            }
+        }
+
         private void BtnAddSave_Click(object sender, EventArgs e)
         {
             if (btnAddSave.Text == "Add")
