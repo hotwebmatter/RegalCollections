@@ -118,5 +118,45 @@ namespace RegalCollections
                 }
             }
         }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            if (btnRemove.Text == "Cancel")
+            {
+                btnAddSave.Text = "Add";
+                btnRemove.Text = "Remove";
+                btnFind.Enabled = true;
+                FillCombo();
+            }
+            else
+            {
+                DialogResult dlgResults;
+                dlgResults = MessageBox.Show("Remove invoice", "Delete", MessageBoxButtons.YesNo,
+                                              MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (dlgResults == System.Windows.Forms.DialogResult.Yes)
+                {
+                    anInvoiceCollection.RemoveInvoice(int.Parse(cboInvoice.Text));
+                    cboInvoice.Text = string.Empty;
+                    txtCustID.Clear();
+                    txtAmount.Clear();
+                    FillCombo();
+                }
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlgResults;
+            dlgResults = MessageBox.Show("Exit", "Exit", MessageBoxButtons.YesNo,
+                                          MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dlgResults == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                anInvoiceFile.WriteFile(anInvoiceCollection);
+            }
+        }
     }
 }
