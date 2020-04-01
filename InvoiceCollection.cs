@@ -26,5 +26,20 @@ namespace RegalCollections
         {
             invoiceList.Remove(number);
         }
+
+        // query method
+        public Invoice FindInvoice(int number)
+        {
+            Invoice result;
+            if (invoiceList.ContainsKey(number))
+            {
+                result = invoiceList[number];
+                return result;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
