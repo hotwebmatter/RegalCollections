@@ -52,5 +52,11 @@ namespace RegalCollections
             }
             return result;
         }
+
+        // override ToString method
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
