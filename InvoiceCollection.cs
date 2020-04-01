@@ -41,5 +41,16 @@ namespace RegalCollections
                 return null;
             }
         }
+
+        // add up the invoices
+        public double TotalAmount()
+        {
+            double result = 0;
+            foreach (Invoice item in AllInvoices)
+            {
+                result += item.salesAmount;
+            }
+            return result;
+        }
     }
 }
