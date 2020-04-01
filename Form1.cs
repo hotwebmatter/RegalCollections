@@ -31,6 +31,14 @@ namespace RegalCollections
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            anInvoiceFile.ReadFile(anInvoiceCollection);
+
+            ReadOnlyInputs(true);
+            FillCombo();
+        }
+
         private void ReadOnlyInputs(bool bln)
         {
             txtCustID.ReadOnly = bln;
@@ -93,14 +101,6 @@ namespace RegalCollections
                     btnRemove.Text = "Cancel";
                 }
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            anInvoiceFile.ReadFile(anInvoiceCollection);
-
-            ReadOnlyInputs(true);
-            FillCombo();
         }
     }
 }
