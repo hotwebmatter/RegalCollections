@@ -133,7 +133,7 @@ namespace RegalCollections
                 DialogResult dlgResults;
                 dlgResults = MessageBox.Show("Remove invoice", "Delete", MessageBoxButtons.YesNo,
                                               MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-                if (dlgResults == System.Windows.Forms.DialogResult.Yes)
+                if (dlgResults == DialogResult.Yes)
                 {
                     anInvoiceCollection.RemoveInvoice(int.Parse(cboInvoice.Text));
                     cboInvoice.Text = string.Empty;
@@ -143,9 +143,9 @@ namespace RegalCollections
                 }
             }
         }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // hmm
             DialogResult dlgResults;
             dlgResults = MessageBox.Show("Exit", "Exit", MessageBoxButtons.YesNo,
                                           MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -158,5 +158,6 @@ namespace RegalCollections
                 anInvoiceFile.WriteFile(anInvoiceCollection);
             }
         }
+
     }
 }

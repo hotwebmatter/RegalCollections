@@ -9,7 +9,7 @@ namespace RegalCollections
     public class InvoiceCollection
     {
         // dictionary property
-        public readonly Dictionary<int, Invoice> invoiceList = new Dictionary<int, Invoice>();
+        public Dictionary<int, Invoice> invoiceList = new Dictionary<int, Invoice>();
 
         // value collection method (accessor)
         public Dictionary<int, Invoice>.ValueCollection AllInvoices
