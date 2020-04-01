@@ -36,6 +36,7 @@
             this.lblCustID = new System.Windows.Forms.Label();
             this.txtCustID = new System.Windows.Forms.TextBox();
             this.lblDate = new System.Windows.Forms.Label();
+            this.txtDate = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.grpSearch = new System.Windows.Forms.GroupBox();
@@ -46,7 +47,6 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnTotal = new System.Windows.Forms.Button();
             this.btnDisplayAll = new System.Windows.Forms.Button();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.grpSearch.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,7 +68,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 32);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -120,6 +120,13 @@
             this.lblDate.Size = new System.Drawing.Size(48, 20);
             this.lblDate.TabIndex = 5;
             this.lblDate.Text = "Date:";
+            // 
+            // txtDate
+            // 
+            this.txtDate.Location = new System.Drawing.Point(211, 156);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(280, 26);
+            this.txtDate.TabIndex = 6;
             // 
             // lblAmount
             // 
@@ -213,19 +220,11 @@
             this.btnDisplayAll.Text = "Display All";
             this.btnDisplayAll.UseVisualStyleBackColor = true;
             // 
-            // dtpDate
-            // 
-            this.dtpDate.Location = new System.Drawing.Point(211, 157);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(280, 26);
-            this.dtpDate.TabIndex = 14;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.btnDisplayAll);
             this.Controls.Add(this.btnTotal);
             this.Controls.Add(this.btnRemove);
@@ -233,6 +232,7 @@
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
+            this.Controls.Add(this.txtDate);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.txtCustID);
             this.Controls.Add(this.lblCustID);
@@ -262,6 +262,7 @@
         private System.Windows.Forms.Label lblCustID;
         private System.Windows.Forms.TextBox txtCustID;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.GroupBox grpSearch;
@@ -272,7 +273,6 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnDisplayAll;
-        private System.Windows.Forms.DateTimePicker dtpDate;
     }
 }
 
