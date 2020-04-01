@@ -42,7 +42,7 @@
             this.lblFind = new System.Windows.Forms.Label();
             this.txtFind = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnAddSave = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnTotal = new System.Windows.Forms.Button();
             this.btnDisplayAll = new System.Windows.Forms.Button();
@@ -173,14 +173,15 @@
             this.btnFind.Text = "Find Invoice";
             this.btnFind.UseVisualStyleBackColor = true;
             // 
-            // btnAdd
+            // btnAddSave
             // 
-            this.btnAdd.Location = new System.Drawing.Point(547, 54);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(225, 58);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAddSave.Location = new System.Drawing.Point(547, 54);
+            this.btnAddSave.Name = "btnAddSave";
+            this.btnAddSave.Size = new System.Drawing.Size(225, 58);
+            this.btnAddSave.TabIndex = 10;
+            this.btnAddSave.Text = "Add";
+            this.btnAddSave.UseVisualStyleBackColor = true;
+            this.btnAddSave.Click += new System.EventHandler(this.BtnAddSave_Click);
             // 
             // btnRemove
             // 
@@ -225,7 +226,7 @@
             this.Controls.Add(this.btnDisplayAll);
             this.Controls.Add(this.btnTotal);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnAddSave);
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
@@ -238,6 +239,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Regal Invoices";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpSearch.ResumeLayout(false);
@@ -263,7 +265,7 @@
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Label lblFind;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnAddSave;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnDisplayAll;
