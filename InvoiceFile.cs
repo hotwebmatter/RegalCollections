@@ -37,7 +37,7 @@ namespace RegalCollections
                 {
                     line = infile.ReadLine();
                     fields = line.Split(delimiter);
-                    Invoice anInvoice = new Invoice;
+                    Invoice anInvoice = new Invoice();
                     anInvoice.number = int.Parse(fields[0]);
                     anInvoice.custID = int.Parse(fields[1]);
                     anInvoice.date = DateTime.Parse(fields[2]);
