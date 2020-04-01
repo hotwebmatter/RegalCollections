@@ -34,7 +34,7 @@ namespace RegalCollections
         private void Form1_Load(object sender, EventArgs e)
         {
             anInvoiceFile.ReadFile(anInvoiceCollection);
-
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
             ReadOnlyInputs(true);
             FillCombo();
         }
