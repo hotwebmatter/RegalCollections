@@ -17,6 +17,20 @@ namespace RegalCollections
             InitializeComponent();
         }
 
+        // instantiate collection and file
+        private readonly InvoiceCollection anInvoiceCollection = new InvoiceCollection();
+        private readonly InvoiceFile anInvoiceFile = new InvoiceFile();
+        private void FillCombo()
+        {
+            // fill combo box with invoice numbers
+            cboInvoice.Items.Clear();
+            foreach (Invoice invoice in anInvoiceCollection.AllInvoices)
+            {
+                cboInvoice.Items.Add(invoice.number);
+                cboInvoice.Text = $"{invoice.number}";
+            }
+        }
+
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close(); // TODO: Prompt user to confirm exit
