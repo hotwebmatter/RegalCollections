@@ -185,7 +185,15 @@ namespace RegalCollections
         private void BtnFind_Click(object sender, EventArgs e)
         {
             Invoice result;
-            result = anInvoiceCollection.FindInvoice(int.Parse(txtFind.Text));
+            int num;
+            if (!int.TryParse(txtFind.Text, out num))
+            {
+                result = null;
+            }
+            else
+            {
+                result = anInvoiceCollection.FindInvoice(num);
+            }
             if (result == null)
             {
                 MessageBox.Show("Not found", "Find");
