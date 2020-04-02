@@ -158,6 +158,7 @@
             this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Find Invoice";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.BtnFind_Click);
             // 
             // txtFind
             // 
@@ -203,6 +204,7 @@
             this.btnTotal.TabIndex = 12;
             this.btnTotal.Text = "Total Invoices";
             this.btnTotal.UseVisualStyleBackColor = true;
+            this.btnTotal.Click += new System.EventHandler(this.BtnTotal_Click);
             // 
             // btnDisplayAll
             // 
@@ -212,6 +214,7 @@
             this.btnDisplayAll.TabIndex = 13;
             this.btnDisplayAll.Text = "Display All";
             this.btnDisplayAll.UseVisualStyleBackColor = true;
+            this.btnDisplayAll.Click += new System.EventHandler(this.BtnDisplayAll_Click);
             // 
             // dtpDate
             // 

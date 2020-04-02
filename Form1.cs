@@ -181,5 +181,33 @@ namespace RegalCollections
             }
             if (bln == false) e.Handled = true;
         }
+
+        private void BtnFind_Click(object sender, EventArgs e)
+        {
+            Invoice result;
+            result = anInvoiceCollection.FindInvoice(int.Parse(txtFind.Text));
+            if (result == null)
+            {
+                MessageBox.Show("Not found", "Find");
+            }
+            else
+            {
+                cboInvoice.Text = $"{result.number}";
+            }
+        }
+
+        private void BtnTotal_Click(object sender, EventArgs e)
+        {
+            double totalAmount;
+            totalAmount = anInvoiceCollection.TotalAmount();
+            MessageBox.Show($"Total amount of invoices: {totalAmount:c}");
+        }
+
+        private void BtnDisplayAll_Click(object sender, EventArgs e)
+        {
+            frmDisplay frm = new frmDisplay();
+            frm.aCollection = anInvoiceCollection;
+            frm.Show();
+        }
     }
 }
