@@ -56,7 +56,14 @@ namespace RegalCollections
         // override ToString method
         public override string ToString()
         {
-            return base.ToString();
+            string result = $"Number\tCust No\tDate\t\tAmount\r\n";
+            foreach (Invoice item in AllInvoices)
+            {
+                result += $"{item.number}\t{item.custID}\t{item.date.ToShortDateString()}\t\t{item.salesAmount:C}\r\n";
+
+            }
+            result += $"Total amount:\t\t\t{this.TotalAmount():c}";
+            return result;
         }
     }
 }
