@@ -12,16 +12,23 @@ namespace RegalCollections
         public void WriteFile(InvoiceCollection invoices)
         {
             StreamWriter outfile;
-            outfile = File.CreateText("invoices.txt");
-            foreach (Invoice anInvoice in invoices.AllInvoices)
+            try
             {
-                outfile.Write(anInvoice.number);
-                outfile.Write(",");
-                outfile.Write(anInvoice.custID);
-                outfile.Write(",");
-                outfile.Write(anInvoice.date.ToShortDateString());
-                outfile.Write(",");
-                outfile.Write(anInvoice.salesAmount);
+                outfile = File.CreateText("invoices.txt");
+                foreach (Invoice anInvoice in invoices.AllInvoices)
+                {
+                    outfile.Write($"{anInvoice.number}");
+                    outfile.Write(",");
+                    outfile.Write($"{anInvoice.custID}");
+                    outfile.Write(",");
+                    outfile.Write(anInvoice.date.ToShortDateString());
+                    outfile.Write(",");
+                    outfile.Write($"{anInvoice.salesAmount}");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Failed to create file");
             }
         }
         public void ReadFile(InvoiceCollection invoices)
