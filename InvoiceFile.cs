@@ -10,28 +10,18 @@ namespace RegalCollections
 {
     class InvoiceFile
     {
-        public void WriteFile(InvoiceCollection invoices)
+        public void WriteFile(InvoiceCollection invoices, StreamWriter outfile)
         {
-            StreamWriter outfile;
             try
             {
-                outfile = File.CreateText("invoices.txt");
                 foreach (Invoice anInvoice in invoices.AllInvoices)
                 {
-                    outfile.Write($"{anInvoice.number}");
-                    outfile.Write(",");
-                    outfile.Write($"{anInvoice.custID}");
-                    outfile.Write(",");
-                    outfile.Write(anInvoice.date.ToShortDateString());
-                    outfile.Write(",");
-                    outfile.Write($"{anInvoice.salesAmount}");
-                    Console.Write($"{anInvoice.number}");
-                    Console.Write(",");
-                    Console.Write($"{anInvoice.custID}");
-                    Console.Write(",");
-                    Console.Write(anInvoice.date.ToShortDateString());
-                    Console.Write(",");
-                    Console.Write($"{anInvoice.salesAmount}");
+                    string result;
+                    result = ($"{anInvoice.number},{anInvoice.custID},");
+                    result += (anInvoice.date.ToShortDateString());
+                    result += ($",{anInvoice.salesAmount}");
+                    outfile.WriteLine(result);
+                    MessageBox.Show($"Attempting to write to file:\n{result}");
                 }
                 
                 MessageBox.Show("Wrote invoices to 'invoices.txt' file.\n");
