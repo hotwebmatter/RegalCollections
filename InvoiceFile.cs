@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace RegalCollections
 {
@@ -24,11 +25,20 @@ namespace RegalCollections
                     outfile.Write(anInvoice.date.ToShortDateString());
                     outfile.Write(",");
                     outfile.Write($"{anInvoice.salesAmount}");
+                    Console.Write($"{anInvoice.number}");
+                    Console.Write(",");
+                    Console.Write($"{anInvoice.custID}");
+                    Console.Write(",");
+                    Console.Write(anInvoice.date.ToShortDateString());
+                    Console.Write(",");
+                    Console.Write($"{anInvoice.salesAmount}");
                 }
+                
+                MessageBox.Show("Wrote invoices to 'invoices.txt' file.\n");
             }
             catch
             {
-                Console.WriteLine("Failed to create file");
+                MessageBox.Show("Failed to create file");
             }
         }
         public void ReadFile(InvoiceCollection invoices)
@@ -38,6 +48,7 @@ namespace RegalCollections
             string line;
             string[] fields = new string[4]; // unnecessary assignment of value
             if (File.Exists("invoices.txt"))
+                MessageBox.Show("File 'invoices.txt' exists.\n");
             {
                 infile = File.OpenText("invoices.txt");
                 while (!infile.EndOfStream)

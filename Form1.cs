@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,15 @@ namespace RegalCollections
 {
     public partial class Form1 : Form
     {
+        // instantiate collection and file
+        private readonly InvoiceCollection anInvoiceCollection = new InvoiceCollection();
+        private readonly InvoiceFile anInvoiceFile = new InvoiceFile();
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        // instantiate collection and file
-        private readonly InvoiceCollection anInvoiceCollection = new InvoiceCollection();
-        private readonly InvoiceFile anInvoiceFile = new InvoiceFile();
         private void FillCombo()
         {
             // fill combo box with invoice numbers
@@ -33,6 +35,8 @@ namespace RegalCollections
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (File.Exists("invoices.txt")) {
+            }
             anInvoiceFile.ReadFile(anInvoiceCollection);
             this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
             ReadOnlyInputs(true);
@@ -155,6 +159,8 @@ namespace RegalCollections
             }
             else
             {
+                
+                MessageBox.Show("Writing anInvoiceCollection to anInvoiceFile.\n");
                 anInvoiceFile.WriteFile(anInvoiceCollection);
             }
         }
