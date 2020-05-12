@@ -10,25 +10,49 @@ namespace RegalCollections
 {
     class InvoiceFile
     {
-        public void WriteFile(InvoiceCollection invoices, StreamWriter outfile)
+
+        public void WriteFile(InvoiceCollection invoices)
         {
+            // open StreamWriter
             try
             {
-                foreach (Invoice anInvoice in invoices.AllInvoices)
+                StreamWriter outfile = new StreamWriter("invoices.txt");
+
+                // Iterate through all invoices
+                try
                 {
-                    string result;
-                    result = ($"{anInvoice.number},{anInvoice.custID},");
-                    result += (anInvoice.date.ToShortDateString());
-                    result += ($",{anInvoice.salesAmount}");
-                    outfile.WriteLine(result);
-                    MessageBox.Show($"Attempting to write to file:\n{result}");
+                    foreach (Invoice anInvoice in invoices.AllInvoices)
+                    {
+                        string result;
+                        result = ($"{anInvoice.number},{anInvoice.custID},");
+                        result += (anInvoice.date.ToShortDateString());
+                        result += ($",{anInvoice.salesAmount}");
+                        outfile.WriteLine(result);
+                        MessageBox.Show($"Attempting to write to file:\n{result}");
+                    }
+                    // Close the StreamWriter
+                    try
+                    {
+                        outfile.Close();
+                        MessageBox.Show("Wrote invoices to 'invoices.txt' file.\n");
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
                 }
-                
-                MessageBox.Show("Wrote invoices to 'invoices.txt' file.\n");
+                catch
+                {
+                    MessageBox.Show("Failed to create file");
+                }
             }
-            catch
+            catch (DirectoryNotFoundException exc)
             {
-                MessageBox.Show("Failed to create file");
+                MessageBox.Show("Invalid Directory", exc.Message);
+            }
+            catch (System.IO.IOException exc)
+            {
+                MessageBox.Show(exc.Message);
             }
         }
         public void ReadFile(InvoiceCollection invoices)

@@ -161,22 +161,7 @@ namespace RegalCollections
             {
                 
                 MessageBox.Show("Writing anInvoiceCollection to anInvoiceFile.\n");
-                if (File.Exists("invoices.txt"))
-                {
-                    try
-                    {
-                        StreamWriter outfile = new StreamWriter("invoices.txt");
-                        anInvoiceFile.WriteFile(anInvoiceCollection, outfile);
-                    }
-                    catch (DirectoryNotFoundException exc)
-                    {
-                        MessageBox.Show("Invalid Directory", exc.Message);
-                    }
-                    catch (System.IO.IOException exc)
-                    {
-                        MessageBox.Show(exc.Message);
-                    }
-                }
+                anInvoiceFile.WriteFile(anInvoiceCollection);
             }
         }
 
