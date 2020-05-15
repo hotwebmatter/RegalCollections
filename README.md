@@ -1,3 +1,7 @@
 # RegalCollections
 
-Last day to submit late work to class. Everything works in this assignment except for the StreamWriter, which writes an empty file to the `bin/Debug` directory.
+Last day to submit late work to class, and this is the last assignment I'll complete.
+
+Everything worked in this assignment except for the StreamWriter, which wrote an empty file to the `bin/Debug` directory.
+
+Turns out that was happening because I forgot to close the filehandle.
